@@ -1,7 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from 'react-native';
 
 const SignInScreen = () => {
+  const navigation = useNavigation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -14,7 +17,9 @@ const SignInScreen = () => {
       <TextInput placeholder="Email" style={styles.input} value={email} onChangeText={setEmail} />
       <TextInput placeholder="Password" style={styles.input} value={password} onChangeText={setPassword} secureTextEntry />
       <TouchableOpacity style={styles.button} onPress={handleSignIn}>
-        <Text style={styles.buttonText}>Sign In</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("Untitled3");
+      }}><Text style={styles.buttonText}>Sign In</Text></Pressable>
       </TouchableOpacity>
       <TouchableOpacity>
         <Text style={styles.forgotPassword}>Forgot Password?</Text>
