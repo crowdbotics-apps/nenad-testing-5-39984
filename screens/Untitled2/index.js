@@ -18,7 +18,7 @@ const SignInScreen = () => {
       <TextInput placeholder="Password" style={styles.input} value={password} onChangeText={setPassword} secureTextEntry />
       <TouchableOpacity style={styles.button} onPress={handleSignIn}>
         <Pressable onPress={() => {
-        navigation.navigate("Untitled3");
+        navigation.navigate("Untitled4");
       }}><Text style={styles.buttonText}>Sign In</Text></Pressable>
       </TouchableOpacity>
       <TouchableOpacity>
