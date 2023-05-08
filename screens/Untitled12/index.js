@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { Pressable } from "react-native";
+import { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 
 const SignUpScreen = ({
@@ -26,7 +27,9 @@ const SignUpScreen = ({
         </Text>
       </View>
       <TouchableOpacity style={styles.button} onPress={handleSignUp}>
-        <Text style={styles.buttonText}>Sign Up</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("Untitled5");
+      }}><Text style={styles.buttonText}>Sign Up</Text></Pressable>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => navigation.navigate('SignIn')}>
         <Text style={styles.signInLink}>Already have an account? Sign In</Text>

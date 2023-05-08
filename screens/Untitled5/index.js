@@ -1,7 +1,9 @@
-import React from 'react';
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 
 const DashboardScreen = () => {
+  const navigation = useNavigation();
   return <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.title}>Dashboard</Text>
@@ -9,11 +11,15 @@ const DashboardScreen = () => {
       <View style={styles.content}>
         <TouchableOpacity style={styles.item}>
           <Image source={require('../assets/settings.png')} style={styles.icon} />
-          <Text style={styles.itemText}>Settings</Text>
+          <Pressable onPress={() => {
+          navigation.navigate("Untitled16");
+        }}><Text style={styles.itemText}>Settings</Text></Pressable>
         </TouchableOpacity>
         <TouchableOpacity style={styles.item}>
           <Image source={require('../assets/user.png')} style={styles.icon} />
-          <Text style={styles.itemText}>User Profile</Text>
+          <Pressable onPress={() => {
+          navigation.navigate("Untitled15");
+        }}><Text style={styles.itemText}>User Profile</Text></Pressable>
         </TouchableOpacity>
         <TouchableOpacity style={styles.item}>
           <Image source={require('../assets/legal.png')} style={styles.icon} />
@@ -29,9 +35,11 @@ const DashboardScreen = () => {
         </TouchableOpacity>
         <TouchableOpacity style={styles.item}>
           <Image source={require('../assets/logout.png')} style={styles.icon} />
-          <Text style={styles.itemText}>Log Out</Text>
+          <Pressable onPress={() => {
+          navigation.navigate("Untitled3");
+        }}><Text style={styles.itemText}>Log Out</Text></Pressable>
         </TouchableOpacity>
-      <Text style={styles.gJPJiTcW}>Lorem ipsum…</Text></View>
+      </View>
     </View>;
 };
 
@@ -77,13 +85,6 @@ const styles = StyleSheet.create({
     color: '#333',
     width: 118,
     height: 24
-  },
-  gJPJiTcW: {
-    width: 100,
-    height: 50,
-    lineHeight: 14,
-    fontSize: 14,
-    borderRadius: 0
   }
 });
 export default DashboardScreen;
