@@ -1,7 +1,9 @@
-import React from 'react';
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import { View, Text, StyleSheet, Image, TextInput } from 'react-native';
 
 const CardDetailsScreen = () => {
+  const navigation = useNavigation();
   return <View style={styles.container}>
       <View style={styles.cardContainer}>
         <Image source={require('../assets/card.png')} style={styles.cardImage} />
@@ -12,7 +14,9 @@ const CardDetailsScreen = () => {
         </View>
       </View>
       <View style={styles.formContainer}>
-        <Text style={styles.formTitle}>Add New Card</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("Untitled9");
+      }}><Text style={styles.formTitle}>Add New Card</Text></Pressable>
         <TextInput style={styles.input} placeholder="Card Number" keyboardType="numeric" />
         <TextInput style={styles.input} placeholder="Name on Card" />
         <View style={styles.row}>

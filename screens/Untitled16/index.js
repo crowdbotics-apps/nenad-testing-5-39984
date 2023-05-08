@@ -11,7 +11,9 @@ const SettingsScreen = () => {
       <View style={styles.module}>
         <TouchableOpacity style={styles.moduleItem}>
           <Image source={require('../assets/icons/account.png')} style={styles.moduleIcon} />
-          <Text style={styles.moduleText}>Account Settings</Text>
+          <Pressable onPress={() => {
+          navigation.navigate("Untitled8");
+        }}><Text style={styles.moduleText}>Account Settings</Text></Pressable>
         </TouchableOpacity>
         <TouchableOpacity style={styles.moduleItem}>
           <Image source={require('../assets/icons/password.png')} style={styles.moduleIcon} />

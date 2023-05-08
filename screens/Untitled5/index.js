@@ -27,7 +27,9 @@ const DashboardScreen = () => {
         </TouchableOpacity>
         <TouchableOpacity style={styles.item}>
           <Image source={require('../assets/chat.png')} style={styles.icon} />
-          <Text style={styles.itemText}>Chat</Text>
+          <Pressable onPress={() => {
+          navigation.navigate("Untitled14");
+        }}><Text style={styles.itemText}>{"My Cart"}</Text></Pressable>
         </TouchableOpacity>
         <TouchableOpacity style={styles.item}>
           <Image source={require('../assets/notifications.png')} style={styles.icon} />
