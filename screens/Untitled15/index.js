@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, Image, StyleSheet } from 'react-native';
+import { useState } from 'react';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 
 const ProfileScreen = () => {
   const [name, setName] = useState('');
@@ -23,16 +23,7 @@ const ProfileScreen = () => {
   };
 
   return <View style={styles.container}>
-      <View style={styles.header}>
-        <TouchableOpacity onPress={() => console.log('Open upload photo feature')}>
-          <Image source={require('../assets/profile-picture.png')} style={styles.avatar} />
-          <View style={styles.editIcon}>
-            <Image source={require('../assets/edit-icon.png')} />
-          </View>
-        </TouchableOpacity>
-        <Text style={styles.name}>{name}</Text>
-        <Text style={styles.username}>{username}</Text>
-      </View>
+      
       <View style={styles.body}>
         <View style={styles.field}>
           <Text style={styles.label}>Full Name</Text>
@@ -83,35 +74,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff'
-  },
-  header: {
-    alignItems: 'center',
-    paddingTop: 50,
-    paddingBottom: 20,
-    backgroundColor: '#F5F5F5'
-  },
-  avatar: {
-    width: 100,
-    height: 100,
-    borderRadius: 50
-  },
-  editIcon: {
-    position: 'absolute',
-    bottom: 0,
-    right: 0,
-    backgroundColor: '#fff',
-    borderRadius: 15,
-    padding: 5
-  },
-  name: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginTop: 10
-  },
-  username: {
-    fontSize: 16,
-    color: '#A9A9A9',
-    marginTop: 5
   },
   body: {
     paddingHorizontal: 20,

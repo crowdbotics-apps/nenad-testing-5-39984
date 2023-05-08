@@ -1,7 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import { Pressable } from "react-native";
 import { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 
 const SignInScreen = () => {
   const navigation = useNavigation();
@@ -12,7 +12,7 @@ const SignInScreen = () => {
   };
 
   return <View style={styles.container}>
-      <Image source={require('../assets/logo.png')} style={styles.logo} />
+      
       <Text style={styles.title}>Sign In</Text>
       <TextInput placeholder="Email" style={styles.input} value={email} onChangeText={setEmail} />
       <TextInput placeholder="Password" style={styles.input} value={password} onChangeText={setPassword} secureTextEntry />
@@ -39,11 +39,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: '#fff',
     paddingHorizontal: 20
-  },
-  logo: {
-    width: 150,
-    height: 150,
-    marginBottom: 30
   },
   title: {
     fontSize: 24,
